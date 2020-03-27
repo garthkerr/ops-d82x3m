@@ -52,4 +52,3 @@ COPY --from=packer /bin/packer /bin/packer
 COPY --from=terraform /bin/terraform /bin/terraform
 
 WORKDIR /app
-
