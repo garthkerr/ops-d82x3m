@@ -2,7 +2,7 @@ FROM hashicorp/packer:1.5.5 AS packer
 FROM hashicorp/terraform:0.12.24 AS terraform
 FROM ubuntu:18.04
 
-ENV ANSIBLE_VERSION 2.9.6
+ENV ANSIBLE_VERSION 2.9.7
 
 ENV REQ_APT_BUILD \
   apt-utils \
