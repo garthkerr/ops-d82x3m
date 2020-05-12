@@ -2,7 +2,7 @@ FROM hashicorp/packer:1.5.5 AS packer
 FROM hashicorp/terraform:0.12.24 AS terraform
 FROM ubuntu:20.04
 
-ENV ANSIBLE_VERSION 2.9.7
+ENV ANSIBLE_VERSION 2.9.9
 
 ENV REQ_APT \
   bash \
@@ -32,12 +32,11 @@ ENV REQ_PIP \
   python-gitlab \
   yq
 
-RUN set -x \
-  && export DEBIAN_FRONTEND=noninteractive \
-  && apt-get update \
-  && apt-get --yes install ${REQ_APT} \
-  && pip3 install ${REQ_PIP} \
-  && apt-get clean && rm -rf ~/.cache
+RUN set -x && export DEBIAN_FRONTEND=noninteractive && \
+  apt-get update && \ 
+  apt-get --yes install ${REQ_APT} && \
+  pip3 install ${REQ_PIP} && \
+  apt-get clean && rm -rf ~/.cache
 
 COPY --from=packer /bin/packer /bin/packer
 COPY --from=terraform /bin/terraform /bin/terraform
