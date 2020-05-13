@@ -1,8 +1,8 @@
-FROM hashicorp/packer:{{ version_packer }} AS packer
-FROM hashicorp/terraform:{{ version_terraform }} AS terraform
+FROM hashicorp/packer:{{ ver_pk }} AS packer
+FROM hashicorp/terraform:{{ ver_tf }} AS terraform
 FROM ubuntu:20.04
 
-ENV ANSIBLE_VERSION {{ version_ansible }}
+ENV ANSIBLE_VERSION {{ ver_an }}
 
 ENV REQ_APT \
   bash \
@@ -33,7 +33,7 @@ ENV REQ_PIP \
   yq
 
 RUN set -x && export DEBIAN_FRONTEND=noninteractive && \
-  apt-get update && \ 
+  apt-get update && \
   apt-get --yes install ${REQ_APT} && \
   pip3 install ${REQ_PIP} && \
   apt-get clean && rm -rf ~/.cache

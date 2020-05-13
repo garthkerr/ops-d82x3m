@@ -33,7 +33,7 @@ ENV REQ_PIP \
   yq
 
 RUN set -x && export DEBIAN_FRONTEND=noninteractive && \
-  apt-get update && \ 
+  apt-get update && \
   apt-get --yes install ${REQ_APT} && \
   pip3 install ${REQ_PIP} && \
   apt-get clean && rm -rf ~/.cache

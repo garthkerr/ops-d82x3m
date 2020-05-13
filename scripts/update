@@ -5,11 +5,11 @@ _get_latest_release() {
 }
 
 _update() {
-  echo '{
-    "version_ansible":   "'"$(_get_latest_release 'ansible/ansible')"'",
-    "version_packer":    "'"$(_get_latest_release 'hashicorp/packer')"'",
-    "version_terraform": "'"$(_get_latest_release 'hashicorp/terraform')"'"
-  }' | j2 --format=json templates/Dockerfile.j2 > Dockerfile
+  export ver_an; ver_an=$(_get_latest_release 'ansible/ansible')
+  export ver_pk; ver_pk=$(_get_latest_release 'hashicorp/packer')
+  export ver_tf; ver_tf=$(_get_latest_release 'hashicorp/terraform')
+
+  j2 templates/Dockerfile.j2 > Dockerfile
 }
 
 _update
