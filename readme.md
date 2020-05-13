@@ -3,7 +3,7 @@
 A collection of tools for infrastructure provisioning, configuration. Used with [direnv](https://direnv.net) to
 delegate commands to docker.
 
-### Included Tools
+### Included Container Tools
 
 - [ansible](https://docs.ansible.com/ansible/latest/index.html)
 - [jq](https://stedolan.github.io/jq/)
@@ -11,10 +11,9 @@ delegate commands to docker.
 - [packer](https://www.packer.io/docs/commands/index.html)
 - [terraform](https://www.terraform.io/docs/cli-index.html)
 
-### Update Dependencies
+### Update Build Dependencies
 
-- [docker](https://www.docker.com)
-- [git](https://git-scm.com/)
+- [j2cli](https://pypi.org/project/j2cli/)
 - [jq](https://stedolan.github.io/jq/)
 - [make](https://www.gnu.org/software/make/)
 
