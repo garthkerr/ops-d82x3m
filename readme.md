@@ -1,7 +1,7 @@
 # Operations Container
 
-A collection of tools for infrastructure provisioning, configuration. Used for a [direnv](https://direnv.net)
-environment to delegate commands to docker.
+A collection of tools for infrastructure provisioning, configuration. Used with [direnv](https://direnv.net) to
+delegate commands to docker.
 
 ### Included Tools
 
