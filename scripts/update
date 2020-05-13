@@ -1,13 +1,13 @@
 #!/bin/bash
 
 _get_latest_release() {
-    curl --silent "https://api.github.com/repos/$1/tags" | jq -r '.[0].name' | cut -c 2-
+  curl --silent "https://api.github.com/repos/$1/tags" | jq -r '.[0].name' | cut -c 2-
 }
 
 _update() {
   echo '{
-    "version_ansible": "'"$(_get_latest_release 'ansible/ansible')"'",
-    "version_packer": "'"$(_get_latest_release 'hashicorp/packer')"'",
+    "version_ansible":   "'"$(_get_latest_release 'ansible/ansible')"'",
+    "version_packer":    "'"$(_get_latest_release 'hashicorp/packer')"'",
     "version_terraform": "'"$(_get_latest_release 'hashicorp/terraform')"'"
   }' | j2 --format=json templates/Dockerfile.j2 > Dockerfile
 }
