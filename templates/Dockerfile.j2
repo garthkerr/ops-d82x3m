@@ -21,8 +21,6 @@ ENV REQ_PIP \
   ansible==${ANSIBLE_VERSION} \
   ansible-lint \
   awscli \
-  botocore \
-  boto \
   boto3 \
   cryptography \
   dopy \
