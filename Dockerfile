@@ -1,5 +1,5 @@
 FROM hashicorp/packer:1.5.6 AS packer
-FROM hashicorp/terraform:0.12.25 AS terraform
+FROM hashicorp/terraform:0.12.26 AS terraform
 FROM ubuntu:20.04
 
 ENV ANSIBLE_VERSION 2.9.9
