@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: dependencies
+      run: |
+        sudo pip --quiet install j2cli
+
+    - name: make update
+      run: |
+        make update
+        if [ -n "$(git status --porcelain)" ]; then
+          echo 'COMMITTING CHANGES'
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git diff && git add . && git commit -m'DOCK automated update'
+          bash <(curl -LsS https://raw.githubusercontent.com/pnikosis/semtag/v0.1.0/semtag) final
+        else
+          echo 'NO CHANGES'
+        fi
+
+    - name: push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        tags: true
