@@ -2,7 +2,10 @@
 
 _update() {
   _get_latest_release() {
-    curl --silent "https://api.github.com/repos/$1/tags" | jq -r '.[0].name' | cut -c 2-
+    curl --silent "https://api.github.com/repos/$1/tags" \
+      | jq -r '.[] | select(.name | contains("b") | not) | .' \
+      | jq -rs '.[0].name' \
+      | cut -c 2-
   }
 
   export ver_an; ver_an=$(_get_latest_release 'ansible/ansible')

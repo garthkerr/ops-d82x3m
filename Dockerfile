@@ -2,7 +2,7 @@ FROM hashicorp/packer:1.6.0 AS packer
 FROM hashicorp/terraform:0.12.26 AS terraform
 FROM ubuntu:20.04
 
-ENV ANSIBLE_VERSION 2.9.9
+ENV ANSIBLE_VERSION 2.9.10
 
 ENV REQ_APT \
   bash \
