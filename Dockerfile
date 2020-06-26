@@ -1,5 +1,5 @@
 FROM hashicorp/packer:1.6.0 AS packer
-FROM hashicorp/terraform:0.12.27 AS terraform
+FROM hashicorp/terraform:0.12.28 AS terraform
 FROM ubuntu:20.04
 
 ENV ANSIBLE_VERSION 2.9.10
@@ -21,7 +21,6 @@ ENV REQ_PIP \
   ansible==${ANSIBLE_VERSION} \
   ansible-lint \
   awscli \
-  boto \
   boto3 \
   cryptography \
   dopy \
