@@ -13,7 +13,7 @@ _update() {
   export ver_tf; ver_tf=$(_get_latest_release 'hashicorp/terraform')
 
   j2 templates/Dockerfile.j2 > Dockerfile
-  j2 templates/readme.md.j2 > readme.md
+  j2 templates/README.md.j2 > README.md
 }
 
 _update
