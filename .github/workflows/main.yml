@@ -22,8 +22,8 @@ jobs:
         make update
         if [ -n "$(git status --porcelain)" ]; then
           echo 'COMMITTING CHANGES'
-          git config user.email "garthkerr@gmail.com"
-          git config user.name "Garth Kerr"
+          git config user.email "${{ secrets.COMMIT_EMAIL }}"
+          git config user.name "${{ secrets.COMMIT_NAME }}"
           git diff && git add . && git commit -m'DOCK automated update'
           bash <(curl -LsS https://raw.githubusercontent.com/pnikosis/semtag/v0.1.0/semtag) final
         else
