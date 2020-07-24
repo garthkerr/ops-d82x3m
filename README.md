@@ -4,12 +4,12 @@ A collection of infrastructure management tools. Use with [direnv](https://diren
 
 ### Included Tools
 
-- [ansible](https://docs.ansible.com/ansible/latest/index.html) (2.10.0rc1)
+- [ansible](https://docs.ansible.com/ansible/latest/index.html) (2.9.11)
 - [aws](https://github.com/aws/aws-cli)
 - [jq](https://stedolan.github.io/jq/)
 - [jsonnet](https://jsonnet.org/)
 - [packer](https://www.packer.io/docs/commands/index.html) (1.6.0)
-- [terraform](https://www.terraform.io/docs/cli-index.html) (0.13.0-rc1)
+- [terraform](https://www.terraform.io/docs/cli-index.html) (0.12.29)
 
 ### Build Dependencies
 
