@@ -3,7 +3,7 @@
 _update() {
   _get_latest_release() {
     curl --silent "https://api.github.com/repos/$1/tags" \
-      | jq -r '.[] | select(.name | contains("b") | not) | .' \
+      | jq -r '.[] | select(.name | contains("b") | not) | select(.name | contains("rc") | not) | .' \
       | jq -rs '.[0].name' \
       | cut -c 2-
   }
