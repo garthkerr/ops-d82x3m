@@ -26,6 +26,7 @@ ENV REQ_PIP \
   dopy \
   mitogen \
   netaddr \
+  pyhcl \
   pymysql \
   python-gitlab \
   yq
