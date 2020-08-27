@@ -2,8 +2,6 @@ FROM hashicorp/packer:{{ ver_pk }} AS packer
 FROM hashicorp/terraform:{{ ver_tf }} AS terraform
 FROM ubuntu:20.04
 
-ARG ANSIBLE_VERSION='{{ ver_an }}'
-
 ARG REQ_APT='\
   bash \
   curl \
@@ -19,7 +17,7 @@ ARG REQ_APT='\
   zip'
 
 ARG REQ_PIP="\
-  ansible==${ANSIBLE_VERSION} \
+  ansible-base=={{ ver_an }} \
   ansible-lint \
   awscli \
   boto3 \
@@ -39,7 +37,7 @@ RUN set -x && export DEBIAN_FRONTEND=noninteractive && \
   apt-get clean && rm -rf ~/.cache
 
 COPY ./scripts/.bin/asdf-terraform /tmp/asdf-terraform
-RUN set -x && bash -c "/tmp/asdf-terraform"
+RUN set -x && bash -c "/tmp/asdf-terraform" && rm "/tmp/asdf-terraform
 
 COPY --from=packer /bin/packer /bin/packer
 COPY --from=terraform /bin/terraform /bin/terraform
