@@ -37,7 +37,7 @@ RUN set -x && export DEBIAN_FRONTEND=noninteractive && \
   apt-get clean && rm -rf ~/.cache
 
 COPY ./scripts/.bin/asdf-terraform /tmp/asdf-terraform
-RUN set -x && bash -c "/tmp/asdf-terraform" && rm "/tmp/asdf-terraform
+RUN set -x && bash -c "/tmp/asdf-terraform" && rm "/tmp/asdf-terraform"
 
 COPY --from=packer /bin/packer /bin/packer
 COPY --from=terraform /bin/terraform /bin/terraform
