@@ -8,7 +8,7 @@ _update() {
       | cut -c 2-
   }
 
-  export ver_an; ver_an=$(_get_latest_release 'ansible/ansible')
+  export ver_an; ver_an='2.9.12'
   export ver_pk; ver_pk=$(_get_latest_release 'hashicorp/packer')
   export ver_tf; ver_tf=$(_get_latest_release 'hashicorp/terraform')
 
