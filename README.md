@@ -9,7 +9,7 @@ A collection of infrastructure management tools. Use with [direnv](https://diren
 - [aws](https://github.com/aws/aws-cli)
 - [jq](https://stedolan.github.io/jq/)
 - [jsonnet](https://jsonnet.org/)
-- [packer](https://www.packer.io/docs/commands/index.html) (1.6.4)
+- [packer](https://www.packer.io/docs/commands/index.html) (1.6.5)
 - [terraform](https://www.terraform.io/docs/cli-index.html) (0.14.0-alpha20201007)
 
 ### Build Dependencies
