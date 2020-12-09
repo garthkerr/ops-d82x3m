@@ -10,7 +10,7 @@ A collection of infrastructure management tools. Use with [direnv](https://diren
 - [jq](https://stedolan.github.io/jq/)
 - [jsonnet](https://jsonnet.org/)
 - [packer](https://www.packer.io/docs/commands/index.html) (1.6.5)
-- [terraform](https://www.terraform.io/docs/cli-index.html) (0.14.0)
+- [terraform](https://www.terraform.io/docs/cli-index.html) (0.14.2)
 
 ### Build Dependencies
 
