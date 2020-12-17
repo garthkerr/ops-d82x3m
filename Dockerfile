@@ -1,4 +1,4 @@
-FROM hashicorp/packer:1.6.5 AS packer
+FROM hashicorp/packer:1.6.6 AS packer
 FROM hashicorp/terraform:0.14.2 AS terraform
 FROM ubuntu:20.04
 
