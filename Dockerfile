@@ -1,5 +1,5 @@
 FROM hashicorp/packer:1.6.6 AS packer
-FROM hashicorp/terraform:0.15.0-alpha20210127 AS terraform
+FROM hashicorp/terraform:0.15.0-alpha20210210 AS terraform
 FROM ubuntu:20.04
 
 ARG REQ_APT='\
